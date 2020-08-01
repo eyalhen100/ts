@@ -1,16 +1,39 @@
-var http = require('http');
 
-http.createServer(function (req, res) {
-  
-  var s: String;
-  s = "Eyal Hen" + 3;
+interface Person {
+  firstName: String;
+  lastName: String;
+}
+
+class Student {
+  fullName: String;
+  constructor(public firstName: String, public middleInitial: String, public lastName: String) {
+      this.fullName = firstName + " " + middleInitial + " " + lastName;
+  }
+
+
+  validateRange(val: Number, from: Number, to: Number) {
+    return ((val <= to) && (val >= from));
+  }
+
+
+  getMessage()
+  {
 
 
 
 
+    return "Test \n" +
+      "Range: " +
+      this.validateRange(5, 1, 23);   
+  }
+}
 
-  var returnString: String;
-  returnString = "Hello World <br>" + s;
-  res.writeHead(200, {'Content-Type': 'text/html'});
-  res.end(returnString);
-}).listen(8080);
+
+
+function greeter(person: Person) {
+  return "Hello, " + person.firstName + " " + person.lastName;
+}
+
+
+//console.log(greeter(new Student("Eyal", "John", "Hen")));
+console.log((new Student("Eyal", "John", "Hen")).getMessage());
