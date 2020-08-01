@@ -1,22 +1,25 @@
 
 
-class Student {
+class Validator {
   fullName: String;
   constructor(public firstName: String, public lastName: String) {
       this.fullName = firstName + " " + lastName;
   }
 
-  validateRange(val: Number, from: Number, to: Number) {
-    console.log(((val <= to) && (val >= from)));
-    
+
+  inRange(val: Number, from: Number, to: Number) {
+    console.log("inRange: "+((val <= to) && (val >= from)));    
   }
 }
 
 function test() {
-  console.log("test function");  
+  console.log("function: "+"test function");  
 }
 
-var student: Student = new Student("Eyal", "Hen");
-student.validateRange(5, 1, 23);
+var student: Validator = new Validator("Eyal", "Hen");
 
+// ranege velidation test
+student.inRange(5, 1, 23);
+
+// function test
 test();

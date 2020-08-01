@@ -1,17 +1,19 @@
-var Student = /** @class */ (function () {
-    function Student(firstName, lastName) {
+var Validator = /** @class */ (function () {
+    function Validator(firstName, lastName) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.fullName = firstName + " " + lastName;
     }
-    Student.prototype.validateRange = function (val, from, to) {
-        console.log(((val <= to) && (val >= from)));
+    Validator.prototype.inRange = function (val, from, to) {
+        console.log("inRange: " + ((val <= to) && (val >= from)));
     };
-    return Student;
+    return Validator;
 }());
 function test() {
-    console.log("test function");
+    console.log("function: " + "test function");
 }
-var student = new Student("Eyal", "Hen");
-student.validateRange(5, 1, 23);
+var student = new Validator("Eyal", "Hen");
+// ranege velidation test
+student.inRange(5, 1, 23);
+// function test
 test();
