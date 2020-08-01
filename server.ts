@@ -1,39 +1,22 @@
 
-interface Person {
-  firstName: String;
-  lastName: String;
-}
 
 class Student {
   fullName: String;
-  constructor(public firstName: String, public middleInitial: String, public lastName: String) {
-      this.fullName = firstName + " " + middleInitial + " " + lastName;
+  constructor(public firstName: String, public lastName: String) {
+      this.fullName = firstName + " " + lastName;
   }
-
 
   validateRange(val: Number, from: Number, to: Number) {
-    return ((val <= to) && (val >= from));
-  }
-
-
-  getMessage()
-  {
-
-
-
-
-    return "Test \n" +
-      "Range: " +
-      this.validateRange(5, 1, 23);   
+    console.log(((val <= to) && (val >= from)));
+    
   }
 }
 
-
-
-function greeter(person: Person) {
-  return "Hello, " + person.firstName + " " + person.lastName;
+function test() {
+  console.log("test function");  
 }
 
+var student: Student = new Student("Eyal", "Hen");
+student.validateRange(5, 1, 23);
 
-//console.log(greeter(new Student("Eyal", "John", "Hen")));
-console.log((new Student("Eyal", "John", "Hen")).getMessage());
+test();
