@@ -7,8 +7,28 @@ class Validator {
   }
 
 
-  inRange(val: Number, from: Number, to: Number) {
-    console.log("inRange: "+((val <= to) && (val >= from)));    
+  inRange(val: Number, from: Number, to: Number): boolean {
+    let g: boolean = ((val <= to) && (val >= from));
+    console.log("inRange: " + g);
+    return g;
+  }
+
+  isTrue(i: boolean):boolean {
+    let g: boolean = false;
+    console.log("isTrue: " + (g == i));
+    return g == i;
+  }
+
+  isIn(s: string, sa: string[]) {
+    for (let i of sa) {
+      if (i == s) {
+        console.log("isIn: "+true)
+        return true
+
+      }
+    }
+    console.log("isIn: "+false)
+    return false
   }
 }
 
@@ -16,10 +36,10 @@ function test() {
   console.log("function: "+"test function");  
 }
 
-var student: Validator = new Validator("Eyal", "Hen");
+var student: Validator = new Validator("Eyal", "Hen")
 
-// ranege velidation test
-student.inRange(5, 1, 23);
 
-// function test
-test();
+test() // function test
+student.inRange(5, 1, 23) // ranege velidation test
+student.isTrue(true) // boolean validation
+student.isIn("der", ["asdas","asdwwd","der","gfhgf"])
