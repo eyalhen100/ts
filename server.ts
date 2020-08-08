@@ -42,4 +42,4 @@ var student: Validator = new Validator("Eyal", "Hen")
 test() // function test
 student.inRange(5, 1, 23) // ranege velidation test
 student.isTrue(true) // boolean validation
-student.isIn("der", ["asdas","asdwwd","der","gfhgf"])
+student.isIn("der", ["asdas","asdwwd","der","gfhgf"]) // is In array validation
